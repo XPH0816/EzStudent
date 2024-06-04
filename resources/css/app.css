@@ -1,0 +1,420 @@
+@import '/node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import 'style.css';
+
+.border {
+    background: #fff;
+    padding: 20px 10px 10px 10px;
+    box-shadow: 0px 10px 30px 0px rgba(13, 12, 13, 0.2);
+}
+
+.login-border {
+    width: 1200px;
+}
+
+.login {
+    color: red;
+}
+
+.login:hover {
+    color: red;
+}
+
+.button-style {
+    border-radius: 0px;
+    width: 124px;
+    height: 60px;
+}
+
+.btn::before {
+    transition: none;
+}
+
+.profile-button {
+    border-radius: 0px;
+    width: 200px;
+}
+
+.update-button {
+    border-radius: 0px;
+}
+
+.centerIt {
+    margin: auto;
+    width: 70%;
+    padding: 70px;
+}
+
+.continue-btn {
+    border-radius: 0px;
+    width: 210px;
+}
+
+.cart-btn {
+    border-radius: 0px;
+    width: 150px;
+    background-color: #6c757d;
+}
+
+.product-container {
+    margin: 50px;
+}
+
+.style {
+    list-style-type: disc;
+}
+
+.specification-container {
+    margin: 30px;
+}
+
+.size-button {
+    border-radius: 0px;
+    background-color: #6c757d;
+}
+
+.addCart-button {
+    border-radius: 0px;
+    width: 150px;
+    margin-right: 250px;
+}
+
+.button-test {
+    background-color: #6c757d;
+}
+
+.product-container {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-quantity {
+    width: 10rem;
+    display: block;
+}
+
+input {
+    /* max-width: 8vw; */
+    margin: 0;
+    padding: 0.75rem 0;
+    text-align: center;
+    border-top: 1px solid grey;
+    border-left: 1px solid grey;
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+}
+
+.quantity-selectors-container {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
+}
+
+.quantity-selectors {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.quantity-selectors button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    border-radius: 0;
+    border: 1px solid grey;
+    background-color: #fff;
+    color: grey;
+}
+
+.quantity-selectors button:first-child {
+    border-bottom: 0;
+}
+
+.quantity-selectors button:hover {
+    cursor: pointer;
+}
+
+.quantity-selectors button[disabled="disabled"] {
+    cursor: not-allowed;
+}
+
+.quantity-selectors button[disabled="disabled"] span {
+    opacity: 0.5;
+}
+
+.cart-button {
+    border-radius: 0px;
+    width: 220px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.testing {
+    padding: 20px;
+}
+
+hr {
+    border: 0;
+    clear: both;
+    display: block;
+    width: 100%;
+    background-color: black;
+    height: 1px;
+}
+
+.button-address {
+    max-width: 60%;
+}
+
+.checkOut-button {
+    border-radius: 0px;
+    max-width: 100%;
+    transition: none;
+}
+.checkOut-button:hover {
+    background-color: #ff2020;
+}
+.side-nav {
+    background-color: #052460;
+    position: relative;
+}
+
+.list-group-item {
+    border: none !important;
+}
+
+.small-word {
+    font-size: 12px;
+}
+
+.welcome-user {
+    position: absolute;
+    left: 2%;
+}
+.copywrite {
+    font-size: 11px;
+    line-height: 15px;
+}
+.side-nav-social {
+    padding-right: 1rem;
+    position: absolute;
+    bottom: 5px;
+}
+
+/* Navbar */
+nav.navbar {
+    z-index: 1;
+    background-color: #fff;
+    transition-delay: 0.3s;
+    transition: 0.3s ease all;
+}
+
+nav.navbar.active {
+    background-color: rgba(28, 105, 212, 1);
+    transition: 0s ease all;
+}
+
+nav .navbar-brand {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+nav .navbar-nav > li:first-of-type {
+    padding: 0 1rem 0 0;
+}
+
+nav .navbar-nav > li {
+    padding: 0 1rem;
+}
+
+nav .navbar-nav li a {
+    font-weight: 500;
+}
+
+nav .navbar-nav > li .dropdown-menu {
+    background-color: #1c69d4;
+    border: 0;
+    padding: 0;
+    margin-left: 1rem;
+    border-radius: 0;
+}
+
+nav .navbar-nav > li .dropdown-menu li a {
+    padding: 0.5rem 1rem;
+    color: #222;
+    transition: 0.15s ease all;
+}
+
+nav .navbar-nav > li .dropdown-menu li a:hover,
+nav .navbar-nav > li .dropdown-menu li a:focus {
+    background-color: #0653b6;
+}
+
+.navbar-toggler {
+    border: 0;
+    padding: 1rem 0;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+    border: 0;
+}
+
+.toggler-icon {
+    width: 30px;
+    height: 2px;
+    background-color: #222;
+    display: block;
+    transition: all 0.2s;
+}
+
+.navbar-toggler.collapsed .toggler-icon {
+    background-color: #222;
+}
+
+.navbar .navbar-toggler {
+    border: 0;
+}
+
+.navbar .navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+.dropdown-menu {
+    top: 100% !important;
+    right: 0vw !important;
+    left: auto !important;
+}
+
+@media screen and (max-width: 991.8px) {
+    .side-nav {
+        display: none;
+    }
+    .logo {
+        position: absolute;
+        top: 10px;
+        right: 2%;
+    }
+    nav .navbar-nav > li:first-of-type {
+        padding: 0;
+    }
+
+    nav .navbar-nav > li {
+        padding: 0;
+    }
+
+    nav .navbar-nav > li .dropdown-menu {
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+        margin-left: 0.5rem;
+    }
+
+    nav .navbar-nav > li .dropdown-menu li a {
+        padding-left: 0.5rem;
+    }
+
+    nav .navbar-nav > li .dropdown-menu li a:hover,
+    nav .navbar-nav > li .dropdown-menu li a:focus {
+        background-color: transparent;
+    }
+}
+
+.dataTables_length,
+.dataTables_info,
+.page-item {
+    display: none;
+}
+
+.dataTables_filter {
+    width: 300px;
+}
+
+.center {
+    text-align: left !important;
+}
+
+.align-right {
+    float: right;
+}
+
+.testing {
+    width: 100%;
+}
+
+.invalid-feedback {
+    display: block;
+}
+
+.info {
+    position: absolute;
+    background: #666;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 10px 20px;
+    max-width: 500px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: -100px;
+    opacity: 0;
+}
+
+.info:not(:empty) {
+    animation: fade 5s;
+}
+@keyframes fade {
+    0% {
+        top: -100px;
+        opacity: 0;
+    }
+    10% {
+        top: 100px;
+        opacity: 1;
+    }
+    90% {
+        top: 100px;
+        opacity: 1;
+    }
+    100% {
+        top: -100px;
+        opacity: 0;
+    }
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-icon {
+    cursor: pointer;
+}
+
+.search-bar {
+    display: none;
+    position: absolute;
+    top: 115px;
+    right: 40px;
+}
+
+.search-bar input {
+    padding: 8px;
+    font-size: 16px;
+}
+
+.search-bar button {
+    padding: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    color: black;
+}
