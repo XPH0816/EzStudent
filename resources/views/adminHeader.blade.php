@@ -37,7 +37,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="/css/custom.css">
+    @vite(['resources/css/custom.css'])
     <title>Admin</title>
 </head>
 
@@ -47,7 +47,7 @@
             <div class="col-auto col-lg-3 col-xl-2 px-sm-2 px-0 side-nav d-none d-lg-block">
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                     <div class="navbar-brand mt-3">
-                        <img src="/css/logo.png" alt="" class="img-fluid" id="logo">
+                        <img src="/logo.png" alt="" class="img-fluid" id="logo">
                     </div>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start mt-3"
                         id="menu">
