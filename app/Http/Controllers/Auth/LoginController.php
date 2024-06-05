@@ -52,14 +52,13 @@ class LoginController extends Controller
 
     protected function validateLogin(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $request->validate([
             $this->username() => 'required|string',
             'password' => 'required|string',
             recaptchaFieldName() => recaptchaRuleName()
         ], [
             recaptchaRuleName() => 'Please ensure that you are a human!'
         ]);
-        $validator->validate();
     }
 
     protected function attemptLogin(Request $request)
