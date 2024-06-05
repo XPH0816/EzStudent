@@ -1,7 +1,7 @@
 @extends('header')
 
 @section('head')
-    {!! htmlScriptTagJsApi() !!}
+    {!! htmlScriptTagJsApi(['action' => 'register']) !!}
 @endsection
 
 @section('content')
@@ -20,7 +20,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-lg-6">
                 <div class="form-container">
-                    <form action="{{ route('register') }}" method="POST">
+                    <form action="{{ route('register') }}" method="POST" id="register">
                         @csrf
                         <div class="row">
                             <div class="col-12 col-lg-12">
@@ -120,11 +120,19 @@
                                     </p>
                                 </div>
                             </div>
+                            <script>
+                                function onSubmit(token) {
+                                    document.getElementById("register").submit();
+                                }
+                            </script>
                             <div class="col-12 col-lg-6">
                                 <div class="mb-3">
                                     <div class="d-grid gap-2 col-4 col-lg-5 mx-auto mt-2 float-lg-end">
-                                        <button class="btn button-style" type="submit" id="submit">Sign
-                                            Up</button>
+                                        <button class="btn button-style g-recaptcha"
+                                        data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}" data-callback="onSubmit"
+                                        data-action="register">Register</button>
+                                        {{-- <button class="btn button-style" type="submit" id="submit">Sign
+                                            Up</button> --}}
                                     </div>
                                 </div>
                             </div>

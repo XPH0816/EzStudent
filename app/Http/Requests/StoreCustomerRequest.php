@@ -43,6 +43,7 @@ class StoreCustomerRequest extends FormRequest
                 'confirmed',
             ],
             'password_confirmation' => 'required|same:password',
+            recaptchaFieldName() => recaptchaRuleName()
         ];
     }
     public function messages()
@@ -60,6 +61,7 @@ class StoreCustomerRequest extends FormRequest
             'password.min' => 'The password must be at least 8 characters long.',
             'password.regex' => 'The password must contain at least one number, one lowercase letter, one uppercase letter, and one special character.',
             'password_confirmation.same' => 'The password confirmation must match the password',
+            recaptchaRuleName() => 'Please ensure that you are a human!'
         ];
     }
 }

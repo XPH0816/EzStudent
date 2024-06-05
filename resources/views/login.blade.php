@@ -1,7 +1,7 @@
 @extends('header')
 
 @section('head')
-    {!! htmlScriptTagJsApi() !!}
+    {!! htmlScriptTagJsApi(['action' => 'login']) !!}
 @endsection
 
 @section('content')
@@ -26,7 +26,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-lg-6">
                 <div class="form-container">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login') }}" id="login">
                         @csrf
                         <div class="row">
                             <div class="col-12 col-lg-12">
@@ -84,7 +84,14 @@
                             <div class="col-12 col-lg-6">
                                 <div class="mb-3">
                                     <div class="d-grid gap-2 col-4 col-lg-6 mx-auto mt-2 float-lg-end">
-                                        <button class="btn button-style" type="submit" id="submit">Login</button>
+                                        <script>
+                                            function onSubmit(token) {
+                                                document.getElementById("login").submit();
+                                            }
+                                        </script>
+                                        <button class="btn button-style g-recaptcha"
+                                            data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}" data-callback="onSubmit"
+                                            data-action="login">Login</button>
                                         {{-- {!! htmlFormButton("Login", [
                                             'class' => 'btn btn-style',
                                         ]) !!} --}}
