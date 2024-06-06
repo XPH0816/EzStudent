@@ -1,7 +1,7 @@
 @extends('header')
 
 @section('head')
-    {!! htmlScriptTagJsApi(['action' => 'login']) !!}
+    {!! RecaptchaV3::initJs() !!}
 @endsection
 
 @section('content')
@@ -59,7 +59,8 @@
 
                         <div class="row">
                             <div class="col-12 col-lg-12">
-                                @error(recaptchaFieldName())
+                                {!! RecaptchaV3::field('login') !!}
+                                @error('g-recaptcha-response')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -84,14 +85,7 @@
                             <div class="col-12 col-lg-6">
                                 <div class="mb-3">
                                     <div class="d-grid gap-2 col-4 col-lg-6 mx-auto mt-2 float-lg-end">
-                                        <script>
-                                            function onSubmit(token) {
-                                                document.getElementById("login").submit();
-                                            }
-                                        </script>
-                                        <button class="btn button-style g-recaptcha"
-                                            data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}" data-callback="onSubmit"
-                                            data-action="login">Login</button>
+                                        <button class="btn button-style" type="submit">Login</button>
                                         {{-- {!! htmlFormButton("Login", [
                                             'class' => 'btn btn-style',
                                         ]) !!} --}}

@@ -9,6 +9,7 @@ use Illuminate\Routing\Matching\ValidatorInterface;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Validator;
+use Lunaweb\RecaptchaV3\Facades\RecaptchaV3;
 
 class LoginController extends Controller
 {
@@ -52,12 +53,15 @@ class LoginController extends Controller
 
     protected function validateLogin(Request $request)
     {
+        $score = RecaptchaV3::verify($request->input('g-recaptcha-response'), 'login');
+
+        if ($score < 0.5) {
+            return redirect('/login')->with('error', 'Recaptcha failed. Please try again.');
+        }
+
         $request->validate([
             $this->username() => 'required|string',
             'password' => 'required|string',
-            recaptchaFieldName() => recaptchaRuleName()
-        ], [
-            recaptchaRuleName() => 'Please ensure that you are a human!'
         ]);
     }
 

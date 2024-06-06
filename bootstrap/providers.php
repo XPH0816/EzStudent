@@ -2,6 +2,6 @@
 
 return [
     App\Providers\AppServiceProvider::class,
-    Biscolab\ReCaptcha\ReCaptchaServiceProvider::class,
+    Lunaweb\RecaptchaV3\Providers\RecaptchaV3ServiceProvider::class,
 ];
 
