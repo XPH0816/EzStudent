@@ -43,5 +43,11 @@ jobs:
       - name: Generate app key
         run: php artisan key:generate
 
+      - name: Clear cache
+        run: php artisan optimize:clear
+
+      - name: Build assets
+        run: npm install && npm run build
+
       - name: Execute tests
         run: vendor/bin/pest
