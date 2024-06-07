@@ -43,6 +43,12 @@ jobs:
       - name: Generate app key
         run: php artisan key:generate
 
+      - name: Create SQLite database
+        run: touch database/database.sqlite
+
+      - name: Run migrations
+        run: php artisan migrate --force
+
       - name: Clear cache
         run: php artisan optimize:clear
 
