@@ -28,7 +28,7 @@ class StoreCustomerRequest extends FormRequest
                 'required',
                 'string',
                 'email',
-                Rule::unique('customers'), // Check for uniqueness in the 'customers' table
+                Rule::unique('customers', 'email'), // Check for uniqueness in the 'customers' table
             ],
             'phoneNo' => ['required', 'regex:/^\d{3}-\d{7}|\d{3}-\d{4}$/'],
             'matric' => ['required', 'regex:/[a-dA-D]{1}+[iI]{1}+[2-9]+[1-9]+\d{4}/'],
