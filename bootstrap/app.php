@@ -30,7 +30,8 @@ return Application::configure(basePath: dirname(__DIR__))
             'checkSuperAdminRole' => \App\Http\Middleware\CheckSuperAdminRole::class,
             'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
             'signed' => \App\Http\Middleware\ValidateSignature::class,
-            'verified' => \App\Http\Middleware\EnsureEmailIsVerified::class
+            'verified' => \App\Http\Middleware\EnsureEmailIsVerified::class,
+            'xss' => \App\Http\Middleware\XssSanitizer::class,
         ]);
     })->withExceptions(function (Exceptions $exceptions) {
         //

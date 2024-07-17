@@ -20,7 +20,7 @@ Auth::routes(['register' => false]);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/register', [CustomerController::class, 'create'])->name('register');
-Route::post('/register', [CustomerController::class, 'store'])->name('register.post');
+Route::post('/register', [CustomerController::class, 'store'])->name('register.post')->middleware('xss');
 
 Route::get('/profile', [CustomerController::class, 'index'])->name('profile');
 Route::put('/updateProfile/{customer}', [CustomerController::class, 'update'])->name('update.profile');
