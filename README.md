@@ -1,4 +1,4 @@
-# EzShop
+# EzStudent
 ## Prerequisite
 - A Stripe account (It's ok to use Developer Account for Testing)
 - A SMTP Mail Server or used your own gmail account [How to Setup using Gmail](https://laracoding.com/how-to-send-email-with-laravel-using-gmail/) follow Step 1 only to get the APP Password 
